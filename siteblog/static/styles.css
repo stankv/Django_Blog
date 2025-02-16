@@ -1,0 +1,460 @@
+/* Цветовой дизайн */
+:root {
+    --primary: #2d4a3d;
+    --accent: #8ab17d;
+    --secondary: #e9c46a;
+    --text: #333;
+}
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 98%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+header {
+    background: var(--primary);
+    color: #fff;
+    padding: 20px 0;
+	/*position: relative;  */
+	position: sticky; /* Липкое позиционирование */
+    top: 0; /* Прилипает к верхнему краю при скроллинге */
+    z-index: 1000; /* Убедимся, что шапка поверх других элементов */
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Иконка "гамбургер" */
+.hamburger {
+    display: none; /* По умолчанию скрыта */
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Стили для формы поиска */
+.search-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    font-size: 1em;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+	background: var(--accent);
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    font-size: 1em;
+	transition: background-color 0.3s, color 0.3s; /* Добавляем плавный переход */
+}
+
+.search-button:hover {
+    background-color: #555; /* Новый цвет при наведении */
+}
+
+/* Поле поиска для мобильных устройств */
+.mobile-search {
+    display: none; /* По умолчанию скрыто */
+    margin-top: 10px;
+}
+
+.mobile-search .search-input {
+    width: calc(100% - 90px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    font-size: 1em;
+    outline: none;
+}
+
+.mobile-search .search-button {
+    width: 80px;
+    padding: 10px;
+    background-color: #555;
+	background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-search .search-button:hover {
+    background-color: #777;
+}
+
+/* Навигационное меню */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Основной контент */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+	/*margin-top: 150px; /* Отступ сверху, чтобы контент не перекрывался шапкой */
+}
+
+.posts {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.post {
+    background: #fff;
+    padding: 20px;
+	margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    margin-top: 0;
+}
+
+.post .meta {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.post .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #333;
+	background: var(--accent);
+    text-decoration: none;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.post .read-more:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Сайдбар */
+.sidebar {
+    flex: 1;
+    background: #fff;
+	margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget {
+    margin-bottom: 30px;
+    background: #f0f4ef;
+    padding: 25px;
+	border: 1px solid var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    transition: transform 0.2s ease;
+}
+
+.widget:hover {
+    transform: translateY(-3px);
+}
+
+.widget h3 {
+    margin-top: 0;
+	color: #333;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget ul li {
+    margin-bottom: 10px;
+}
+
+.widget ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.widget ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Специфичные стили для разных виджетов */
+.widget.search-widget {
+    background: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+.widget.about-widget {
+    background: #f1f8ff;
+    border-color: #c8e1ff;
+}
+
+.widget.recent-posts-widget {
+    background: #fff5f7;
+    border-color: #ffd6e0;
+}
+
+/* Стили для виджета "Теги" */
+.widget.tags-widget {
+    background: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #d4e6d1;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Подвал */
+footer {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+		/*margin-top: 120px; /* Увеличиваем отступ для шапки */
+    }
+
+    .posts {
+        margin-right: 0;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+
+    .hamburger {
+        display: flex; /* Показываем иконку на мобильных устройствах */
+		top: 25px; /* Позиционирование иконки */
+    }
+
+    nav {
+        display: none; /* Скрываем меню по умолчанию на мобильных устройствах */
+        width: 100%;
+        background: #444;
+        position: absolute;
+        top: 60px; /* Сдвигаем меню ниже */
+        left: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav.active {
+        display: block; /* Показываем меню при активации */
+    }
+	
+	.widget {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+	
+	/* Поле поиска в шапке для мобильных устройств */
+    .mobile-search {
+        display: flex !important;
+        position: relative;
+        /*top: 50px;
+        right: 20px;
+        width: 100%;
+        max-width: 300px;
+        z-index: 1000;
+        background: #444;
+        padding: 1px;
+        border-radius: 5px; */
+		width: 60%; /* Ширина 90% от контейнера */
+        margin: 10px -10px -15px auto; /*10px auto 0; /* Отступ по часовой стрелке */
+        order: 3; /* Перемещаем форму под меню */
+    }
+	
+	.mobile-search .search-input {
+        flex: 1;
+        padding: 8px;
+        font-size: 0.9em;
+        border: none; /* Убираем границу */
+    }
+
+    .mobile-search .search-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        background: #555;
+        border: none;
+    }
+	
+	.mobile-search .search-button:hover {
+        background-color: #777;
+		padding: 8px 15px;
+        font-size: 0.9em;
+        background: #333;
+        border: none;
+    }
+
+    /* Скрываем виджет "Поиск по сайту" в сайдбаре */
+    .search-widget {
+        display: none;
+    }
+}
+
+/* Стили для пагинации */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.page-button {
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /*transition: background-color 0.3s ease; */
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.page-button:hover {
+    background: #555;
+}
+
+.page-button.active {
+    background: #777;
+}
+
+
+
+
+/* Обновленные стили виджетов */
+.widget {
+    background: rgba(138, 177, 125, 0.1); /* 10% прозрачности от --accent */
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+}
+
+.widget h3 {
+    color: var(--primary);
+    border-bottom: 2px solid rgba(45, 74, 61, 0.2); /* 20% прозрачности --primary */
+}
+
+/* Специфичные стили для разных виджетов */
+.widget.search-widget {
+    background: rgba(233, 196, 106, 0.1); /* 10% --secondary */
+    border-color: var(--secondary);
+}
+
+.widget.about-widget {
+    background: rgba(138, 177, 125, 0.15); /* 15% --accent */
+}
+
+.widget.recent-posts-widget {
+    background: rgba(45, 74, 61, 0.05); /* 5% --primary */
+}
+
+/* Теги */
+/* .tag {
+    background: rgba(233, 196, 106, 0.2); /* 20% --secondary 
+    color: var(--primary);
+    border: 1px solid rgba(233, 196, 106, 0.3);
+}  */
+
+.tag:hover {
+    background: var(--accent);
+    color: var(--primary);
+} 
+
+/* Пагинация */
+.page-button {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.page-button:hover {
+    background: var(--secondary);
+}
+
+.page-button.active {
+    background: var(--primary);
+    color: white;
+}
