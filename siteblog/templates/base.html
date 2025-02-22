@@ -1,6 +1,6 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
+{% load cache %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -23,33 +23,10 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Блог программиста</h1>
-            <!-- Иконка "гамбургер" -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-			<!-- Поле поиска для мобильных устройств -->
-            <form action="#" method="get" class="search-form mobile-search">
-                <input type="text" name="search" placeholder="Поиск..." class="search-input">
-                <button type="submit" class="search-button">Найти</button>
-            </form>
-            <!-- Навигационное меню -->
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="#">Главная</a></li>
-					<li><a href="#">Python</a></li>
-					<li><a href="#">Java</a></li>
-					<li><a href="#">C#</a></li>
-                    <li><a href="#">Фишки</a></li>
-                    <li><a href="#">Технологии</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+{% cache 20 header %}
+{% include 'inc/_header.html' %}
+{% endcache %}
 
     <main class="container">
 

@@ -134,7 +134,19 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+	display: inline-block; /* Чтобы transform работал корректно */
+    padding: 5px 10px; /* Стандартные отступы */
+    transition: all 0.3s ease; /* Плавный переход */
 }
+
+#nav-menu ul li a:hover {
+    color: var(--secondary); /* Цвет текста при наведении */
+    background-color: rgba(233, 196, 106, 0.1); /* Легкий фон при наведении */
+    border-radius: 5px; /* Закругленные углы */
+    transform: scale(1.05); /* Легкое увеличение */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта "поднятия" */
+}
+
 
 /* Основной контент */
 main {
@@ -457,4 +469,27 @@ footer {
 .page-button.active {
     background: var(--primary);
     color: white;
+}
+
+/* Стили для ссылок главного меню при наведении */
+#nav-menu ul li a:hover {
+    color: var(--secondary); /* Цвет текста при наведении */
+    background-color: rgba(233, 196, 106, 0.1); /* Легкий фон при наведении */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 5px 10px; /* Отступы для лучшего визуального эффекта */
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+/* Стили для активного пункта меню */
+#nav-menu ul li a.active {
+    color: var(--secondary); /* Цвет акцентного элемента */
+    font-weight: bold; /* Жирный шрифт */
+    /*border-bottom: 2px solid var(--secondary); /* Подчеркивание */
+}
+
+/* Дополнительные стили для активного пункта меню при наведении */
+#nav-menu ul li a.active:hover {
+    background-color: rgba(233, 196, 106, 0.2); /* Более насыщенный фон при наведении */
+	transform: scale(1.05); /* Легкое увеличение */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта "поднятия" */
 }

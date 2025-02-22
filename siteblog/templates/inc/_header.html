@@ -1,0 +1,20 @@
+{% load menu %}
+{% load static %}
+<header>
+    <div class="container">
+        <h1>Блог программиста</h1>
+        <!-- Иконка "гамбургер" -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Поле поиска для мобильных устройств -->
+        <form action="#" method="get" class="search-form mobile-search">
+            <input type="text" name="search" placeholder="Поиск..." class="search-input">
+            <button type="submit" class="search-button">Найти</button>
+        </form>
+        <!-- Навигационное меню -->
+        {% show_menu %}
+    </div>
+</header>

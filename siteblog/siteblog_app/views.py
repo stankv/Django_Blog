@@ -3,3 +3,6 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'siteblog_app/index.html')
+
+def get_category(request, slug):
+    return render(request, 'siteblog_app/category.html')
