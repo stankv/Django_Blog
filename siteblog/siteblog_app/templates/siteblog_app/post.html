@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }} :: {{ block.super }} {% endblock %}
+
+{% block content %}
+<section class="posts">
+    <article class="post">
+      <h2>{{ post.title }}</h2>
+      <div class="meta">
+        <span>Опубликовано: {{ post.created_at|date:"d.m.Y" }}</span><br>
+        <span>Категория: <a class="meta" href="{{ post.category.get_absolute_url }}"><b>{{ post.category }}</b></a></span><br>
+        {% if post.tags.exists %}
+          <span>
+            Теги:
+            {% for tag in post.tags.all %}
+              <a class="meta" href="{{ tag.get_absolute_url }}"><b>#{{ tag.title }}</b></a>
+            {% endfor %}
+          </span><br>
+        {% endif %}
+        <span>Просмотров: {{ post.count_views }}</span>
+      </div>
+      <p>{{ post.content|safe }}</p>
+    </article>
+</section>
+{% endblock %}

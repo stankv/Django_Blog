@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Post, Category, Tag
+from django.db.models import F
 
 
 class HomeView(ListView):
@@ -31,11 +32,25 @@ class PostsByCategory(ListView):
         return context
 
 
-def index(request):
-    return render(request, 'siteblog_app/index.html')
+class PostsByTag(ListView):
+    """template_name = 'siteblog_app/index.html'
+    context_object_name = 'posts'
+    paginate_by = 1
+    allow_empty = False
 
-def get_category(request, slug):
-    return render(request, 'siteblog_app/category.html')
+    def get_queryset(self):
+        return Post.objects.filter(tags__slug=self.kwargs['slug'])"""
+    pass
 
-def get_post(request, slug):
-    return render(request, 'siteblog_app/category.html')
+
+class GetPost(DetailView):
+    model = Post
+    template_name = 'siteblog_app/post.html'
+    context_object_name = 'post'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        self.object.count_views = F('count_views') + 1
+        self.object.save()
+        self.object.refresh_from_db()
+        return context
