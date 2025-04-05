@@ -8,3 +8,7 @@ def get_popular_posts(cnt=3):    # кол-во выводимых постов
     posts = Post.objects.order_by('-count_views')[:cnt]
     return {"posts": posts}
 
+@register.inclusion_tag('siteblog_app/tags_tpl.html')
+def get_tags():
+    tags = Tag.objects.all()
+    return {"tags": tags}

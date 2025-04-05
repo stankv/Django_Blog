@@ -1,0 +1,9 @@
+<!-- Виджет "Теги" -->
+<div class="widget tags-widget">
+  <h3>Теги</h3>
+    <div class="tags-list">
+      {% for tag in tags %}
+      <a href="{{ tag.get_absolute_url }}" class="tag">{{ tag.title }}</a>
+      {% endfor %}
+    </div>
+</div>
