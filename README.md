@@ -27,10 +27,12 @@
 ## 🎨 Интерфейс
 
 ### Desktop версия
-![Главная страница](https://via.placeholder.com/800x400?text=Desktop+Version)
+<img width="1101" height="833" alt="изображение" src="https://github.com/user-attachments/assets/4b59f399-c189-4cc8-9e00-1114371f566c" />
+
 
 ### Mobile версия
-![Мобильная версия](https://via.placeholder.com/400x600?text=Mobile+Version)
+<img width="507" height="885" alt="изображение" src="https://github.com/user-attachments/assets/ee8c0cd9-a657-4690-925c-82e2c93629cc" />
+
 
 ## 🏗️ Архитектура проекта
 
