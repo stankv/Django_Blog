@@ -4,14 +4,14 @@
     <div class="container">
         <h1>Блог программиста</h1>
         <!-- Иконка "гамбургер" -->
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" aria-label="Меню" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <!-- Поле поиска для мобильных устройств -->
-        <form action="#" method="get" class="search-form mobile-search">
-            <input type="text" name="search" placeholder="Поиск..." class="search-input">
+        <form action="{% url 'search' %}" method="get" class="search-form mobile-search">
+            <input type="text" name="s" placeholder="Поиск..." class="search-input">
             <button type="submit" class="search-button">Найти</button>
         </form>
         <!-- Навигационное меню -->

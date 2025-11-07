@@ -5,10 +5,11 @@ const navLinks = document.querySelectorAll('#nav-menu ul li a');
 
 // Добавляем обработчик события для иконки "гамбургер"
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const isExpanded = navMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
 });
 
-/ Пагинация
+// Пагинация
 const posts = document.querySelectorAll('.post');
 const pageButtons = document.querySelectorAll('.page-button');
 

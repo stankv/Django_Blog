@@ -5,7 +5,8 @@ const navLinks = document.querySelectorAll('#nav-menu ul li a');
 
 // Обработчик для гамбургер-меню
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const isExpanded = navMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
 });
 
 // Функция для установки активного пункта меню
